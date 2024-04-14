@@ -4,6 +4,9 @@ import router from "./routes";
 import UserService from "./services/UserServices";
 import User from "./models/User";
 import ItemService from "./services/ItemServices";
+import BrandService from "./services/BrandServices";
+import Cart from "./models/Cart";
+import CartService from "./services/CartServices";
 
 const PORT: number = parseInt(process.env.PORT || "5000");
 
@@ -20,6 +23,8 @@ const start = async (): Promise<void> => {
 
     UserService.initialize(sequelize);
     ItemService.initialize(sequelize);
+    // BrandService.initialize(sequelize);
+    // CartService.initialize(sequelize);
 
     app.listen(PORT, () => {
       console.log(`Server is running on ${PORT} port`);
